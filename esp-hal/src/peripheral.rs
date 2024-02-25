@@ -319,6 +319,27 @@ mod peripheral_macros {
                 }
             }
 
+            #[allow(non_snake_case)]
+            pub struct OptionalPeripherals {
+                $(
+                    $(#[$cfg])?
+                    pub $name: Option<peripherals::$name>,
+                )*
+            }
+
+            impl OptionalPeripherals {
+                /// Create an `OptionalPeripherals`, consuming a `Peripherals`
+                #[inline]
+                pub fn from(p: Peripherals) -> Self {
+                    Self {
+                        $(
+                            $(#[$cfg])?
+                            $name: Some(p.$name),
+                        )*
+                    }
+                }
+            }
+
             // expose the new structs
             $(
                 pub use peripherals::$name;
