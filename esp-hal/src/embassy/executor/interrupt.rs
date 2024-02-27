@@ -154,7 +154,7 @@ where
         pub use esp_println::println;
         println!(
             "self.core: {} get_core(): {}",
-            self.core.get(),
+            self.core.load(Ordering::Relaxed),
             get_core() as usize
         );
         if self
