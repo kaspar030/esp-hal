@@ -151,6 +151,12 @@ where
     /// [`Spawner`]: embassy_executor::Spawner
     /// [`Spawner::for_current_executor()`]: embassy_executor::Spawner::for_current_executor()
     pub fn start(&'static self, priority: interrupt::Priority) -> SendSpawner {
+        pub use esp_println::println;
+        println!(
+            "self.core: {} get_core(): {}",
+            self.core.get(),
+            get_core() as usize
+        );
         if self
             .core
             .compare_exchange(
