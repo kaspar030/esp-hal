@@ -156,7 +156,7 @@ riscv  = ["dep:riscv", "critical-section/restore-state-u8"]
 xtensa = ["critical-section/restore-state-u32"]
 
 # Initialize / clear data sections and RTC memory
-rv-init-data     = ["esp-riscv-rt/init-data", "esp-riscv-rt/init-rw-text"]
+rv-init-data     = ["esp-riscv-rt/init-data" ]
 rv-zero-rtc-bss  = ["esp-riscv-rt/zero-rtc-fast-bss"]
 rv-init-rtc-data = ["esp-riscv-rt/init-rtc-fast-data", "esp-riscv-rt/init-rtc-fast-text"]
 
