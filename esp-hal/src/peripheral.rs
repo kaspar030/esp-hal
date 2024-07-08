@@ -325,6 +325,41 @@ mod peripheral_macros {
                     $(#[$cfg])?
                     pub $name: Option<peripherals::$name>,
                 )*
+                // These GPIO peripherals are intended to be populated later, when the `Io` type is
+                // instantiated, initializing GPIOs.
+                // We need to define them here so that users can access them like every other
+                // peripherals.
+                pub GPIO_0: Option<crate::gpio::GPIO_0>,
+                pub GPIO_1: Option<crate::gpio::GPIO_1>,
+                pub GPIO_2: Option<crate::gpio::GPIO_2>,
+                pub GPIO_3: Option<crate::gpio::GPIO_3>,
+                pub GPIO_4: Option<crate::gpio::GPIO_4>,
+                pub GPIO_5: Option<crate::gpio::GPIO_5>,
+                pub GPIO_6: Option<crate::gpio::GPIO_6>,
+                pub GPIO_7: Option<crate::gpio::GPIO_7>,
+                pub GPIO_8: Option<crate::gpio::GPIO_8>,
+                pub GPIO_9: Option<crate::gpio::GPIO_9>,
+                pub GPIO_10: Option<crate::gpio::GPIO_10>,
+                pub GPIO_11: Option<crate::gpio::GPIO_11>,
+                pub GPIO_12: Option<crate::gpio::GPIO_12>,
+                pub GPIO_13: Option<crate::gpio::GPIO_13>,
+                pub GPIO_14: Option<crate::gpio::GPIO_14>,
+                pub GPIO_15: Option<crate::gpio::GPIO_15>,
+                pub GPIO_16: Option<crate::gpio::GPIO_16>,
+                pub GPIO_17: Option<crate::gpio::GPIO_17>,
+                pub GPIO_18: Option<crate::gpio::GPIO_18>,
+                pub GPIO_19: Option<crate::gpio::GPIO_19>,
+                pub GPIO_20: Option<crate::gpio::GPIO_20>,
+                pub GPIO_21: Option<crate::gpio::GPIO_21>,
+                pub GPIO_22: Option<crate::gpio::GPIO_22>,
+                pub GPIO_23: Option<crate::gpio::GPIO_23>,
+                pub GPIO_24: Option<crate::gpio::GPIO_24>,
+                pub GPIO_25: Option<crate::gpio::GPIO_25>,
+                pub GPIO_26: Option<crate::gpio::GPIO_26>,
+                pub GPIO_27: Option<crate::gpio::GPIO_27>,
+                pub GPIO_28: Option<crate::gpio::GPIO_28>,
+                pub GPIO_29: Option<crate::gpio::GPIO_29>,
+                pub GPIO_30: Option<crate::gpio::GPIO_30>,
             }
 
             impl OptionalPeripherals {
@@ -336,6 +371,37 @@ mod peripheral_macros {
                             $(#[$cfg])?
                             $name: Some(p.$name),
                         )*
+                        GPIO_0: None,
+                        GPIO_1: None,
+                        GPIO_2: None,
+                        GPIO_3: None,
+                        GPIO_4: None,
+                        GPIO_5: None,
+                        GPIO_6: None,
+                        GPIO_7: None,
+                        GPIO_8: None,
+                        GPIO_9: None,
+                        GPIO_10: None,
+                        GPIO_11: None,
+                        GPIO_12: None,
+                        GPIO_13: None,
+                        GPIO_14: None,
+                        GPIO_15: None,
+                        GPIO_16: None,
+                        GPIO_17: None,
+                        GPIO_18: None,
+                        GPIO_19: None,
+                        GPIO_20: None,
+                        GPIO_21: None,
+                        GPIO_22: None,
+                        GPIO_23: None,
+                        GPIO_24: None,
+                        GPIO_25: None,
+                        GPIO_26: None,
+                        GPIO_27: None,
+                        GPIO_28: None,
+                        GPIO_29: None,
+                        GPIO_30: None,
                     }
                 }
             }
