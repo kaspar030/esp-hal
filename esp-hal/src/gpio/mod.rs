@@ -1160,6 +1160,12 @@ macro_rules! gpio {
             }
 
             // These macros call the code block on the actually contained GPIO pin.
+            $(
+                #[doc = concat!("Alias for GpioPin<MODE, ", $gpionum, ">")]
+                pub type [<Gpio $gpionum >] = GpioPin<$gpionum>;
+                #[allow(non_camel_case_types)]
+                pub type [<GPIO_ $gpionum >] = GpioPin<$gpionum>;
+            )+
 
             #[doc(hidden)]
             #[macro_export]
