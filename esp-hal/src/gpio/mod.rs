@@ -1279,6 +1279,8 @@ macro_rules! gpio {
             $(
                 #[doc = concat!("Alias for GpioPin<MODE, ", $gpionum, ">")]
                 pub type [<Gpio $gpionum >] = GpioPin<$gpionum>;
+                #[allow(non_camel_case_types)]
+                pub type [<GPIO_ $gpionum >] = GpioPin<$gpionum>;
             )+
 
             #[doc(hidden)]
