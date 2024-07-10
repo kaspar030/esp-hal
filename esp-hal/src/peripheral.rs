@@ -254,15 +254,25 @@ mod peripheral_macros {
                 pub GPIO_18: Option<crate::gpio::GPIO_18>,
                 pub GPIO_19: Option<crate::gpio::GPIO_19>,
                 pub GPIO_20: Option<crate::gpio::GPIO_20>,
+                #[cfg(any(esp32c3, esp32c6))]
                 pub GPIO_21: Option<crate::gpio::GPIO_21>,
+                #[cfg(esp32c6)]
                 pub GPIO_22: Option<crate::gpio::GPIO_22>,
+                #[cfg(esp32c6)]
                 pub GPIO_23: Option<crate::gpio::GPIO_23>,
+                #[cfg(esp32c6)]
                 pub GPIO_24: Option<crate::gpio::GPIO_24>,
+                #[cfg(esp32c6)]
                 pub GPIO_25: Option<crate::gpio::GPIO_25>,
+                #[cfg(esp32c6)]
                 pub GPIO_26: Option<crate::gpio::GPIO_26>,
+                #[cfg(esp32c6)]
                 pub GPIO_27: Option<crate::gpio::GPIO_27>,
+                #[cfg(esp32c6)]
                 pub GPIO_28: Option<crate::gpio::GPIO_28>,
+                #[cfg(esp32c6)]
                 pub GPIO_29: Option<crate::gpio::GPIO_29>,
+                #[cfg(esp32c6)]
                 pub GPIO_30: Option<crate::gpio::GPIO_30>,
             }
 
@@ -296,15 +306,25 @@ mod peripheral_macros {
                         GPIO_18: None,
                         GPIO_19: None,
                         GPIO_20: None,
+                        #[cfg(any(esp32c3, esp32c6))]
                         GPIO_21: None,
+                        #[cfg(esp32c6)]
                         GPIO_22: None,
+                        #[cfg(esp32c6)]
                         GPIO_23: None,
+                        #[cfg(esp32c6)]
                         GPIO_24: None,
+                        #[cfg(esp32c6)]
                         GPIO_25: None,
+                        #[cfg(esp32c6)]
                         GPIO_26: None,
+                        #[cfg(esp32c6)]
                         GPIO_27: None,
+                        #[cfg(esp32c6)]
                         GPIO_28: None,
+                        #[cfg(esp32c6)]
                         GPIO_29: None,
+                        #[cfg(esp32c6)]
                         GPIO_30: None,
                     }
                 }
