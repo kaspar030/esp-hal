@@ -332,6 +332,35 @@ mod peripheral_macros {
                         }
                     }
                 }
+
+                /// The `OptionalPeripherals` struct provides access to all of the hardware peripherals on the chip.
+                #[allow(non_snake_case)]
+                pub struct OptionalPeripherals {
+                    $(
+                        #[doc = concat!("The ", stringify!($name), " peripheral.")]
+                        pub $name: Option<peripherals::$name>,
+                    )*
+
+                    $(
+                        #[doc = concat!("GPIO", stringify!($pin))]
+                        pub [<GPIO $pin>]: Option<$crate::gpio::GpioPin<$pin>>,
+                    )*
+                }
+
+                impl OptionalPeripherals {
+                    /// Create an `OptionalPeripherals`, consuming a `Peripherals`
+                    #[inline]
+                    pub fn from(p: Peripherals) -> Self {
+                        Self {
+                            $(
+                                $name: Some(p.$name),
+                            )*
+                            $(
+                                [<GPIO $pin>]: Some(p.[<GPIO $pin>]),
+                            )*
+                        }
+                    }
+                }
             }
 
             // expose the new structs
