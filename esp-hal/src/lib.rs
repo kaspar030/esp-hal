@@ -545,6 +545,13 @@ pub struct Async(PhantomData<*const ()>);
 
 unsafe impl Sync for Async {}
 
+// NOTE: Ariel OS needs these drivers to be `Send` currently.
+// So we force this here, and additionally *disable multicore* to keep these drivers
+// pinned to the only available single core.
+// This is a temporary measure until either we find a better solution on the Ariel side, or
+// these drivers become `Send`.
+unsafe impl Send for Async {}
+
 impl crate::DriverMode for Blocking {}
 impl crate::DriverMode for Async {}
 impl crate::private::Sealed for Blocking {}
