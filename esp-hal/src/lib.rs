@@ -739,7 +739,8 @@ pub fn init(config: Config) -> Peripherals {
         }
     }
 
-    crate::soc::ensure_stack_pointer_in_range();
+    // Ariel OS: we call `ìnit()` from a thread stack, so this always fails.
+    //crate::soc::ensure_stack_pointer_in_range();
     #[cfg(stack_guard_monitoring)]
     crate::soc::enable_main_stack_guard_monitoring();
 
