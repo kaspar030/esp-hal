@@ -2551,7 +2551,7 @@ impl WifiController<'_> {
         impl Drop for ResetModeOnDrop {
             fn drop(&mut self) {
                 unsafe { esp_wifi_set_mode(wifi_mode_t_WIFI_MODE_NULL) };
-                unwrap!(WifiController::stop_impl());
+                WifiController::stop_impl().ok().unwrap();
             }
         }
 
